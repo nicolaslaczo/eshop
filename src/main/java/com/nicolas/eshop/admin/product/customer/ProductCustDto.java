@@ -1,14 +1,12 @@
 package com.nicolas.eshop.admin.product.customer;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class ProductCustDto {
 
     private Integer id;
@@ -24,4 +22,6 @@ public class ProductCustDto {
     private Integer sellPrice;
 
     private String image;
+
+    private Integer quantity;
 }

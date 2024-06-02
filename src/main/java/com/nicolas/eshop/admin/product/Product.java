@@ -7,6 +7,8 @@ import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
@@ -36,7 +38,7 @@ public class Product {
     @Column(columnDefinition = "MEDIUMBLOB")
     private String image;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "category_id")
     @JsonIgnore
