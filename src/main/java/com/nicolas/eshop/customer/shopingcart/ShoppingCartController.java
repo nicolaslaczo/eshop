@@ -2,6 +2,7 @@ package com.nicolas.eshop.customer.shopingcart;
 
 import com.nicolas.eshop.admin.product.Product;
 import com.nicolas.eshop.admin.product.customer.ProductCustDto;
+import com.nicolas.eshop.customer.customer.Customer;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,12 @@ public class ShoppingCartController {
     @DeleteMapping("/public/cart/checkout")
     public ResponseEntity<HttpStatus> checkoutCart() {
         shoppingCartService.checkoutCart();
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/public/cart/create")
+    public ResponseEntity<HttpStatus> createNewOrder(@RequestBody Customer customer) {
+        shoppingCartService.createNewOrder(customer);
         return ResponseEntity.ok().build();
     }
 
